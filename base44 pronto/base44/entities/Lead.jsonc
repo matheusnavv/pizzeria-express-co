@@ -1,0 +1,27 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "city": {
+      "type": "string",
+      "description": "Cidade detectada do lead"
+    },
+    "state": {
+      "type": "string",
+      "description": "Estado detectado"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "address": {
+      "type": "string",
+      "description": "Endere\u00e7o digitado pelo lead"
+    }
+  },
+  "required": [
+    "city"
+  ]
+}

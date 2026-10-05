@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<script>
+  window.pixelId = "693d047a6f1aff8342f6f59e";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Combo Donatellos</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; }
+        .footer-shadow { box-shadow: 0 -5px 15px rgba(0,0,0,0.1); }
+        .section-error { border: 2px solid #ef4444 !important; }
+    </style>
+</head>
+<body class="pb-32">
+<div class="relative w-full h-64 md:h-80">
+<button class="absolute top-4 left-4 z-10 bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg" onclick="window.history.back()">
+<i class="fas fa-chevron-left text-gray-800"></i>
+</button>
+<img alt="Combo Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+</div>
+<main class="max-w-2xl mx-auto px-4 pt-6">
+<h1 class="text-2xl font-black text-gray-800 leading-tight">2 Pizzas M + 1 Refrigerante 2 Litros</h1>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[#006437] font-bold text-xl">R$ 67,90</span>
+</div>
+<p class="text-gray-500 text-sm mt-3 leading-relaxed">
+            Monte seu combo selecionando os sabores das duas pizzas, tipo de borda e seu refrigerante.
+        </p>
+<section class="mt-8" id="sec-pizza1">
+<div class="bg-gray-100 p-4 rounded-t-xl flex justify-between items-center border-x border-t border-gray-200">
+<div>
+<h2 class="font-bold text-gray-800 uppercase text-sm tracking-wide">1. Escolha a 1ª Pizza</h2>
+<p class="text-xs text-gray-500">Selecione 1 opção</p>
+</div>
+<span class="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase">Obrigatório</span>
+</div>
+<div class="bg-white border border-gray-200 rounded-b-xl overflow-hidden divide-y divide-gray-100" id="lista-pizza-1">
+</div>
+</section>
+<section class="mt-8" id="sec-pizza2">
+<div class="bg-gray-100 p-4 rounded-t-xl flex justify-between items-center border-x border-t border-gray-200">
+<div>
+<h2 class="font-bold text-gray-800 uppercase text-sm tracking-wide">2. Escolha a 2ª Pizza</h2>
+<p class="text-xs text-gray-500">Selecione 1 opção</p>
+</div>
+<span class="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase">Obrigatório</span>
+</div>
+<div class="bg-white border border-gray-200 rounded-b-xl overflow-hidden divide-y divide-gray-100" id="lista-pizza-2">
+</div>
+</section>
+<section class="mt-8">
+<div class="bg-gray-100 p-4 rounded-t-xl flex justify-between items-center border-x border-t border-gray-200">
+<div>
+<h2 class="font-bold text-gray-800 uppercase text-sm tracking-wide">3. Borda Recheada?</h2>
+<p class="text-xs text-gray-500">Escolha como deseja sua borda</p>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-b-xl overflow-hidden divide-y divide-gray-100">
+<label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+<span class="font-semibold text-gray-700">Sem Borda Recheada (Tradicional)</span>
+<input checked="" class="w-5 h-5 accent-red-600" name="borda" type="radio" value="Sem Borda"/>
+</label>
+<label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+<span class="font-semibold text-gray-700">Borda de Catupiry</span>
+<input class="w-5 h-5 accent-red-600" name="borda" type="radio" value="Borda Catupiry"/>
+</label>
+<label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+<span class="font-semibold text-gray-700">Borda de Cheddar</span>
+<input class="w-5 h-5 accent-red-600" name="borda" type="radio" value="Borda Cheddar"/>
+</label>
+</div>
+</section>
+<section class="mt-8" id="sec-refri">
+<div class="bg-gray-100 p-4 rounded-t-xl flex justify-between items-center border-x border-t border-gray-200">
+<div>
+<h2 class="font-bold text-gray-800 uppercase text-sm tracking-wide">4. Escolha o Refrigerante</h2>
+<p class="text-xs text-gray-500">Selecione 1 opção</p>
+</div>
+<span class="bg-red-600 text-white text-[10px] px-2 py-1 rounded font-black uppercase">Obrigatório</span>
+</div>
+<div class="bg-white border border-gray-200 rounded-b-xl overflow-hidden divide-y divide-gray-100">
+<label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+<span class="font-semibold text-gray-700">Coca-Cola 2 Litros</span>
+<input class="w-5 h-5 accent-red-600" name="refri" type="radio" value="2x Coca-Cola 2L"/>
+</label>
+<label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+<span class="font-semibold text-gray-700">Guaraná Antarctica 2 Litros</span>
+<input class="w-5 h-5 accent-red-600" name="refri" type="radio" value="2x Guaraná 2L"/>
+</label>
+</div>
+</section>
+<div class="mt-8 mb-10">
+<h2 class="font-bold text-gray-800 mb-2 uppercase text-sm">Alguma observação?</h2>
+<textarea class="w-full border border-gray-200 rounded-xl p-4 text-sm focus:ring-2 focus:ring-red-500 outline-none transition" id="obs" placeholder="Ex: Tirar cebola da pizza de calabresa..." rows="3"></textarea>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-white p-4 footer-shadow z-50">
+<div class="max-w-2xl mx-auto">
+<button class="w-full bg-red-600 text-white font-extrabold h-14 rounded-2xl flex justify-between items-center px-8 hover:bg-red-700 transition active:scale-95" id="btn-finalizar" onclick="validarEPedir()">
+<span class="uppercase tracking-tighter text-lg" id="txt-botao">Confirmar Pedido</span>
+<span class="bg-white/20 px-3 py-1 rounded-lg">R$ 67,90</span>
+</button>
+</div>
+</footer>
+<script>
+        const cardapio = [
+            { nome: "Calabresa Especial", desc: "Molho especial, muçarela, calabresa fatiada e cebola." },
+            { nome: "Frango com Catupiry", desc: "Frango desfiado temperado com legítimo Catupiry." },
+            { nome: "Portuguesa Tradicional", desc: "Presunto, ovos, cebola, ervilha e muçarela." },
+            { nome: "Carne de Sol", desc: "Carne de sol desfiada, muçarela e cebola roxa." },
+            { nome: "Marguerita Premium", desc: "Muçarela, manjericão fresco e rodelas de tomate." },
+            { nome: "Mista Donatello", desc: "Muçarela, presunto e orégano de primeira." },
+            { nome: "Quatro Queijos", desc: "Muçarela, catupiry, provolone e parmesão." },
+            { nome: "Baiana Hot", desc: "Calabresa moída, pimenta, ovos e cebola." },
+            { nome: "Napolitana", desc: "Muçarela, tomate fatiado e parmesão ralado." }
+        ];
+
+        function carregarSabores() {
+            const container1 = document.getElementById('lista-pizza-1');
+            const container2 = document.getElementById('lista-pizza-2');
+
+            cardapio.forEach((sabor) => {
+                const itemHtml = (grupo) => `
+                    <label class="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50 transition">
+                        <div class="pr-6">
+                            <p class="font-bold text-gray-800">${sabor.nome}</p>
+                            <p class="text-xs text-gray-400 leading-snug">${sabor.desc}</p>
+                        </div>
+                        <input type="radio" name="${grupo}" value="${sabor.nome}" class="w-6 h-6 accent-red-600">
+                    </label>
+                `;
+                container1.innerHTML += itemHtml('pizza1');
+                container2.innerHTML += itemHtml('pizza2');
+            });
+        }
+
+        function validarEPedir() {
+            const pizza1 = document.querySelector('input[name="pizza1"]:checked');
+            const pizza2 = document.querySelector('input[name="pizza2"]:checked');
+            const refri = document.querySelector('input[name="refri"]:checked');
+            const btn = document.getElementById('btn-finalizar');
+            const txtBotao = document.getElementById('txt-botao');
+
+            document.querySelectorAll('section').forEach(s => s.classList.remove('section-error'));
+
+            if (!pizza1) {
+                alert("Por favor, selecione o sabor da PRIMEIRA pizza!");
+                document.getElementById('sec-pizza1').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.getElementById('sec-pizza1').classList.add('section-error');
+                return;
+            }
+
+            if (!pizza2) {
+                alert("Por favor, selecione o sabor da SEGUNDA pizza!");
+                document.getElementById('sec-pizza2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.getElementById('sec-pizza2').classList.add('section-error');
+                return;
+            }
+
+            if (!refri) {
+                alert("Por favor, selecione o refrigerante!");
+                document.getElementById('sec-refri').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                document.getElementById('sec-refri').classList.add('section-error');
+                return;
+            }
+
+            txtBotao.innerText = "PROCESSANDO...";
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            window.location.href = "https://pay.compraseguraprime.shop/65XDZB8MqnRgVJw";
+        }
+
+        window.onload = carregarSabores;
+    </script>
+</body>
+</html>

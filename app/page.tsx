@@ -11,6 +11,7 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { StickyCartBar } from '@/components/StickyCartBar';
 import { Footer } from '@/components/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
+import { LocationModal } from '@/components/LocationModal';
 import {
   SUPER_COMBOS,
   COMBOS_ESPECIALES,
@@ -216,6 +217,7 @@ export default function HomePage() {
 
       <Footer />
       <CookieConsent />
+      <LocationModal />
     </div>
   );
 }

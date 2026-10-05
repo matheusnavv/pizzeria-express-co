@@ -1,0 +1,52 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string",
+      "description": "Subt\u00edtulo corto del producto"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "description": "Precio en COP"
+    },
+    "image": {
+      "type": "string",
+      "description": "URL de la imagen del producto"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "super-combos",
+        "combos-especiales",
+        "pizzas",
+        "bebidas",
+        "postres"
+      ],
+      "default": "pizzas"
+    },
+    "badge": {
+      "type": "string",
+      "description": "Sello como 'M\u00c1S PEDIDA'"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Nota de 0 a 5"
+    },
+    "serves": {
+      "type": "string",
+      "description": "Porciones o para cu\u00e1ntas personas"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

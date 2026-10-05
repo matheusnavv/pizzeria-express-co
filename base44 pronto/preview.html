@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeliPizza | Domicilios de Pizza Online en Colombia</title>
+    <link rel="icon" type="image/png" href="/delipizza-emblem.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', sans-serif; background-color: #f4f4f5; }
+      .timer-box { box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35); }
+      .card-shadow { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); }
+      .premium-box { background: linear-gradient(135deg, #004d2a 0%, #006437 100%); border: 2px solid #fbbf24; }
+      @keyframes pulse-green {
+        0% { transform: scale(0.95); opacity: 0.7; }
+        50% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(0.95); opacity: 0.7; }
+      }
+      .animate-pulse-fast { animation: pulse-green 1.5s infinite; }
+      @keyframes pulse-soft {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+      }
+      .animate-card-pulse {
+        animation: pulse-soft 2.5s infinite ease-in-out;
+        border-color: #ea580c !important;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800 selection:bg-orange-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/preview-entry.jsx"></script>
+  </body>
+</html>

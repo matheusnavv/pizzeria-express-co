@@ -1,0 +1,49 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "Items del pedido con nombre, qty, price"
+    },
+    "total": {
+      "type": "number",
+      "description": "Total en COP"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "nequi",
+        "brep",
+        "efectivo"
+      ],
+      "default": "nequi"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "preparing",
+        "delivering",
+        "done"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "items",
+    "total"
+  ]
+}
