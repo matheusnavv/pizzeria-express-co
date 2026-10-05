@@ -4,7 +4,7 @@ import { ArrowLeft, FileText } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
 export const metadata = {
-  title: 'Términos y Condiciones del Servicio | Pizzería Express',
+  title: 'Términos y Condiciones del Servicio | DeliPizza',
   description: 'Condiciones de uso, compra, entrega a domicilio y política de precios en Colombia.',
 };
 
@@ -20,7 +20,7 @@ export default function TerminosCondicionesPage() {
             <ArrowLeft className="w-4 h-4" />
             <span>Volver a la tienda</span>
           </Link>
-          <span className="font-extrabold text-white text-base">Pizzería Express</span>
+          <img src="/brand/delipizza-logo.png" alt="DeliPizza" className="h-7 w-auto object-contain" />
         </div>
       </header>
 

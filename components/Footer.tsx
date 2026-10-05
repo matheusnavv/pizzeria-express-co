@@ -2,23 +2,22 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Pizza, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-surface-border bg-neutral-950 text-neutral-400 py-12 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-        {/* Brand Column */}
+        {/* Brand Column with Official Logo */}
         <div className="space-y-3 md:col-span-2">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-primary to-amber-600 flex items-center justify-center text-white">
-              <Pizza className="w-5 h-5" />
-            </div>
-            <span className="font-extrabold text-xl text-white tracking-tight">
-              {siteConfig.brand.name}
-            </span>
-          </div>
+          <Link href="/" className="inline-block">
+            <img
+              src="/brand/delipizza-logo.png"
+              alt={siteConfig.brand.name}
+              className="h-10 w-auto object-contain brightness-110"
+            />
+          </Link>
           <p className="text-xs sm:text-sm text-neutral-400 max-w-md leading-relaxed">
             {siteConfig.brand.description}
           </p>
@@ -73,13 +72,15 @@ export const Footer: React.FC = () => {
 
       {/* Payment methods & Copyright */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-surface-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <span className="text-neutral-400">Pagos habilitados en Colombia:</span>
-          <span className="bg-purple-950/60 text-purple-300 font-bold px-2 py-0.5 rounded border border-purple-500/30">
-            Nequi
+          <span className="inline-flex items-center gap-1.5 bg-neutral-900 text-neutral-200 font-bold px-2 py-1 rounded-md border border-neutral-800">
+            <img src="/brand/nequi-logo.png" alt="Nequi" className="h-4 w-auto object-contain rounded" />
+            <span>Nequi</span>
           </span>
-          <span className="bg-blue-950/60 text-blue-300 font-bold px-2 py-0.5 rounded border border-blue-500/30">
-            Bre-B
+          <span className="inline-flex items-center gap-1.5 bg-neutral-900 text-neutral-200 font-bold px-2 py-1 rounded-md border border-neutral-800">
+            <img src="/brand/breb-logo.png" alt="Bre-B" className="h-4 w-auto object-contain rounded" />
+            <span>Bre-B</span>
           </span>
         </div>
 

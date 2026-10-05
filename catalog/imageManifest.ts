@@ -50,12 +50,16 @@ export const IMAGE_MANIFEST: Record<string, string> = {
   '/images/products/pizza-pollo-champinones.webp': generatePlaceholderSvg('POLLO CHAMPIÑONES', 'Pollo tierno y champiñones', '#20241e', '#43A047'),
   '/images/products/pizza-pepperoni.webp': generatePlaceholderSvg('PEPPERONI', 'Pepperoni americano', '#2b1b1b', '#E53935'),
   '/images/products/pizza-jamon-queso.webp': generatePlaceholderSvg('JAMÓN Y QUESO', 'Jamón seleccionado', '#2b1e22', '#E53935'),
+  '/images/products/pizza-napolitana.webp': generatePlaceholderSvg('NAPOLITANA', 'Tomate, aceitunas y orégano', '#2a2118', '#FFB300'),
   '/images/products/pizza-carnes.webp': generatePlaceholderSvg('CARNES', 'Selección de carnes', '#2b1b1b', '#E53935'),
   '/images/products/pizza-criolla.webp': generatePlaceholderSvg('CRIOLLA', 'Carne desmechada y maíz', '#2b2216', '#FFB300'),
   '/images/products/pizza-paisa.webp': generatePlaceholderSvg('PAISA', 'Chorizo, jamón y maíz', '#2b2216', '#FFB300'),
   '/images/products/pizza-pollo-tocineta.webp': generatePlaceholderSvg('POLLO TOCINETA', 'Pollo, tocineta y maíz', '#2b1b1b', '#E53935'),
   '/images/products/pizza-miel-mostaza.webp': generatePlaceholderSvg('MIEL MOSTAZA', 'Pollo y salsa miel mostaza', '#2a2416', '#FFB300'),
   '/images/products/pizza-vegetariana.webp': generatePlaceholderSvg('VEGETARIANA', 'Champiñones y vegetales', '#1b261e', '#43A047'),
+  '/images/products/pizza-arequipe-queso.webp': generatePlaceholderSvg('AREQUIPE Y QUESO', 'Dulce colombiano', '#2b2014', '#D97706'),
+  '/images/products/pizza-bocadillo-queso.webp': generatePlaceholderSvg('BOCADILLO Y QUESO', 'Bocadillo veleño', '#2b1620', '#DC2626'),
+  '/images/products/pizza-nutella.webp': generatePlaceholderSvg('NUTELLA', 'Avellanas y chocolate', '#241a18', '#78350F'),
 
   // Crusts
   '/images/crusts/borde-tradicional.webp': generatePlaceholderSvg('BORDE TRADICIONAL', 'Masa artesanal', '#222222', '#888888'),
@@ -67,16 +71,13 @@ export const IMAGE_MANIFEST: Record<string, string> = {
   '/images/products/dedos-de-queso.webp': generatePlaceholderSvg('DEDOS DE QUESO', '6 unidades crocantes', '#26221a', '#FFB300'),
   '/images/products/papas-a-la-francesa.webp': generatePlaceholderSvg('PAPAS FRANCESAS', 'Porción dorada', '#26221a', '#FFB300'),
 
-  // Desserts
-  '/images/products/pizza-arequipe-queso.webp': generatePlaceholderSvg('AREQUIPE Y QUESO', 'Personal · 4 porciones', '#2b2014', '#D97706'),
-  '/images/products/pizza-bocadillo-queso.webp': generatePlaceholderSvg('BOCADILLO Y QUESO', 'Personal · 4 porciones', '#2b1620', '#DC2626'),
-  '/images/products/pizza-nutella.webp': generatePlaceholderSvg('PIZZA DE NUTELLA', 'Personal · 4 porciones', '#241a18', '#78350F'),
+  // Desserts (non-flavor pizza items)
   '/images/products/brownie.webp': generatePlaceholderSvg('BROWNIE CHOCOLATE', '1 unidad con nueces', '#241a18', '#78350F'),
 
   // Drinks
-  '/images/products/coca-cola-original.webp': generatePlaceholderSvg('COCA-COLA 1.5 L', 'Sabor Original Fría', '#2b1414', '#E53935'),
+  '/images/products/coca-cola-original.webp': '/images/coca-cola-15.jpg',
   '/images/products/coca-cola-zero.webp': generatePlaceholderSvg('COCA-COLA ZERO 1.5 L', 'Sin Azúcar Fría', '#1e1e1e', '#666666'),
-  '/images/products/colombiana-postobon.webp': generatePlaceholderSvg('COLOMBIANA 1.5 L', 'La Nuestra · Postobón', '#2b1c14', '#EA580C'),
+  '/images/products/colombiana-postobon.webp': '/images/colombiana-15.jpg',
   '/images/products/manzana-postobon.webp': generatePlaceholderSvg('MANZANA POSTOBÓN 1.5 L', 'Sabor a Manzana', '#2b141e', '#E11D48'),
 };
 

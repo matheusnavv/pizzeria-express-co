@@ -440,3 +440,111 @@ export async function recordPaymentEvent(data: {
     }
   );
 }
+
+// ─── Upsell / OrderOffer functions ───────────────────────────────────────────
+
+export interface StoredOrderOffer {
+  id: string;
+  orderId: string;
+  offerId: string;
+  sequence: number;
+  productId: string;
+  productName: string;
+  offerPriceCOP: number;
+  regularPriceCOP: number;
+  status: string; // pending | paid | declined | expired
+  paymentTransactionId?: string | null;
+  paidAt?: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const memoryOffers = new Map<string, StoredOrderOffer>();
+
+export async function createOrderOffer(data: {
+  orderId: string;
+  offerId: string;
+  sequence: number;
+  productId: string;
+  productName: string;
+  offerPriceCOP: number;
+  regularPriceCOP: number;
+}): Promise<StoredOrderOffer> {
+  const id = `offer_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+  const now = new Date();
+
+  return executeWithFallback(
+    async () => {
+      const offer = await prisma.orderOffer.create({
+        data: {
+          orderId: data.orderId,
+          offerId: data.offerId,
+          sequence: data.sequence,
+          productId: data.productId,
+          productName: data.productName,
+          offerPriceCOP: data.offerPriceCOP,
+          regularPriceCOP: data.regularPriceCOP,
+          status: 'pending',
+        },
+      });
+      return offer as unknown as StoredOrderOffer;
+    },
+    () => {
+      const offer: StoredOrderOffer = {
+        id,
+        orderId: data.orderId,
+        offerId: data.offerId,
+        sequence: data.sequence,
+        productId: data.productId,
+        productName: data.productName,
+        offerPriceCOP: data.offerPriceCOP,
+        regularPriceCOP: data.regularPriceCOP,
+        status: 'pending',
+        paymentTransactionId: null,
+        paidAt: null,
+        createdAt: now,
+        updatedAt: now,
+      };
+      memoryOffers.set(id, offer);
+      return offer;
+    }
+  );
+}
+
+export async function getOrderOfferById(id: string): Promise<StoredOrderOffer | null> {
+  return executeWithFallback(
+    async () => {
+      const offer = await prisma.orderOffer.findUnique({ where: { id } });
+      return (offer as unknown as StoredOrderOffer) ?? null;
+    },
+    () => memoryOffers.get(id) ?? null
+  );
+}
+
+export async function updateOrderOffer(
+  id: string,
+  updates: Partial<{ status: string; paymentTransactionId: string; paidAt: Date }>
+): Promise<void> {
+  await executeWithFallback(
+    async () => {
+      await prisma.orderOffer.update({
+        where: { id },
+        data: { ...updates, updatedAt: new Date() },
+      });
+    },
+    () => {
+      const offer = memoryOffers.get(id);
+      if (offer) Object.assign(offer, updates, { updatedAt: new Date() });
+    }
+  );
+}
+
+export async function getOrderOffersByOrderId(orderId: string): Promise<StoredOrderOffer[]> {
+  return executeWithFallback(
+    async () => {
+      const offers = await prisma.orderOffer.findMany({ where: { orderId }, orderBy: { sequence: 'asc' } });
+      return offers as unknown as StoredOrderOffer[];
+    },
+    () => Array.from(memoryOffers.values()).filter((o) => o.orderId === orderId)
+  );
+}

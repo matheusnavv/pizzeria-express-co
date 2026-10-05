@@ -51,6 +51,7 @@ export const createOrderInputSchema = z.object({
   deliveryReference: z.string().trim().max(150).optional().or(z.literal('')),
   customerNotes: z.string().trim().max(siteConfig.commerce.maxNotesLength).optional().or(z.literal('')),
   paymentMethod: z.enum(['NEQUI', 'BREB']).default('NEQUI'),
+  deliveryOptionId: z.enum(['standard', 'priority']).default('standard'),
   items: z.array(orderItemInputSchema).min(1, 'El carrito no puede estar vacío').max(siteConfig.commerce.maxCartItems),
 });
 

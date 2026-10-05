@@ -31,6 +31,7 @@ model Order {
 
   items             OrderItem[]
   transactions      PaymentTransaction[]
+  offers            OrderOffer[]
 
   @@index([publicCode])
   @@index([phone])
@@ -66,6 +67,8 @@ model PaymentTransaction {
   currency              String         @default("COP")
   method                String         // NEQUI or BREB
   status                String         @default("pending") // pending, confirmed, completed, failed, expired
+  source                String         @default("main") // main | checkout_order_bump | post_purchase_upsell
+  offerId               String?        // References OrderOffer.id when source != 'main'
   checkoutUrl           String?
   payeeData             Json?
   expiresAt             DateTime?
@@ -74,11 +77,36 @@ model PaymentTransaction {
 
   order                 Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
   events                PaymentEvent[]
+  offers                OrderOffer[]
 
   @@index([orderId])
   @@index([externalId])
   @@index([providerTransactionId])
+  @@index([source])
   @@map("payment_transactions")
+}
+
+model OrderOffer {
+  id                    String              @id @default(uuid())
+  orderId               String
+  offerId               String              // e.g. 'upsell-1-pizza-familiar'
+  sequence              Int                 // 1, 2, 3, 4
+  productId             String
+  productName           String
+  offerPriceCOP         Int
+  regularPriceCOP       Int
+  status                String             @default("pending") // pending, paid, declined, expired
+  paymentTransactionId  String?
+  paidAt                DateTime?
+  createdAt             DateTime           @default(now())
+  updatedAt             DateTime           @updatedAt
+
+  order                 Order              @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  transaction           PaymentTransaction? @relation(fields: [paymentTransactionId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([offerId])
+  @@map("order_offers")
 }
 
 model PaymentEvent {

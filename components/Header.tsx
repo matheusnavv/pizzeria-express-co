@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Pizza } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 import { StoreStatusBadge } from './StoreStatus';
 import { useCart } from '@/context/CartContext';
@@ -14,23 +14,17 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 w-full glass-nav shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-        {/* Brand Logo & Name */}
+        {/* Official DeliPizza PNG Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group transition-transform active:scale-95"
+          className="flex items-center gap-2 group transition-transform active:scale-95"
           aria-label={siteConfig.brand.name}
         >
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-brand-primary to-amber-600 flex items-center justify-center text-white shadow-glow group-hover:scale-105 transition-transform">
-            <Pizza className="w-6 h-6 sm:w-7 sm:h-7" />
-          </div>
-          <div>
-            <span className="font-extrabold text-lg sm:text-2xl tracking-tight text-white block leading-none">
-              {siteConfig.brand.name}
-            </span>
-            <span className="text-[11px] sm:text-xs text-amber-400 font-medium hidden xs:block mt-0.5">
-              {siteConfig.brand.tagline}
-            </span>
-          </div>
+          <img
+            src="/brand/delipizza-logo.png"
+            alt={siteConfig.brand.name}
+            className="h-9 sm:h-12 w-auto object-contain max-w-[160px] sm:max-w-[220px]"
+          />
         </Link>
 
         {/* Store Status & Cart Action */}

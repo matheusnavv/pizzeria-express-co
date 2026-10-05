@@ -9,7 +9,6 @@ import {
   Copy,
   AlertTriangle,
   RotateCw,
-  Pizza,
   MapPin,
   Phone,
   ArrowRight,
@@ -192,9 +191,12 @@ export default function OrderPage({ params }: { params: { publicCode: string } }
       {/* Top Header */}
       <header className="glass-nav border-b border-surface-border py-4 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-extrabold text-base sm:text-lg text-white flex items-center gap-2">
-            <Pizza className="w-5 h-5 text-brand-primary" />
-            <span>Pizzería Express</span>
+          <Link href="/" className="inline-block" aria-label="DeliPizza">
+            <img
+              src="/brand/delipizza-logo.png"
+              alt="DeliPizza"
+              className="h-8 sm:h-9 w-auto object-contain"
+            />
           </Link>
 
           <span className="font-mono text-xs font-bold bg-neutral-900 border border-surface-border px-3 py-1.5 rounded-lg text-amber-300">

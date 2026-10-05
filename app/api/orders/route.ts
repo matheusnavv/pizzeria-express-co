@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     const input = parseResult.data;
 
     // Strict server-side pricing recalculation
-    const pricing = calculateOrderPricing(input.items);
+    const pricing = calculateOrderPricing(input.items, input.deliveryOptionId);
 
     if (!pricing.isMinOrderMet) {
       return NextResponse.json(

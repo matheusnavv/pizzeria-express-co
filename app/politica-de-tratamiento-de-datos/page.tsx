@@ -4,7 +4,7 @@ import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
 export const metadata = {
-  title: 'Política de Tratamiento de Datos Personales | Pizzería Express',
+  title: 'Política de Tratamiento de Datos Personales | DeliPizza',
   description: 'Conoce cómo tratamos y protegemos tus datos personales bajo la Ley 1581 de 2012 de la República de Colombia.',
 };
 
@@ -20,7 +20,7 @@ export default function PoliticaDatosPage() {
             <ArrowLeft className="w-4 h-4" />
             <span>Volver a la tienda</span>
           </Link>
-          <span className="font-extrabold text-white text-base">Pizzería Express</span>
+          <img src="/brand/delipizza-logo.png" alt="DeliPizza" className="h-7 w-auto object-contain" />
         </div>
       </header>
 

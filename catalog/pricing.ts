@@ -109,13 +109,14 @@ export function calculateOrderPricing(
     productId: string;
     quantity: number;
     customization?: ItemCustomization;
-  }>
+  }>,
+  deliveryOptionId: 'standard' | 'priority' = 'standard'
 ): OrderPricingResult {
   if (!rawItems || rawItems.length === 0) {
     return {
       subtotalCOP: 0,
-      deliveryFeeCOP: siteConfig.commerce.deliveryFeeCOP,
-      totalCOP: 0,
+      deliveryFeeCOP: deliveryOptionId === 'priority' ? 8900 : (siteConfig.commerce.freeDelivery ? 0 : siteConfig.commerce.deliveryFeeCOP),
+      totalCOP: deliveryOptionId === 'priority' ? 8900 : 0,
       isMinOrderMet: false,
       minOrderRequiredCOP: siteConfig.commerce.minOrderCOP,
       totalItemCount: 0,
@@ -150,7 +151,7 @@ export function calculateOrderPricing(
     });
   }
 
-  const deliveryFeeCOP = siteConfig.commerce.freeDelivery ? 0 : siteConfig.commerce.deliveryFeeCOP;
+  const deliveryFeeCOP = deliveryOptionId === 'priority' ? 8900 : (siteConfig.commerce.freeDelivery ? 0 : siteConfig.commerce.deliveryFeeCOP);
   const totalCOP = subtotalCOP + deliveryFeeCOP;
   const isMinOrderMet = subtotalCOP >= siteConfig.commerce.minOrderCOP;
 

@@ -5,40 +5,46 @@ import { siteConfig } from '@/config/siteConfig';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Pizzería Express | Pizza a domicilio',
+  title: 'DeliPizza | Domicilios de Pizza Online en Colombia',
   description:
-    'Pide pizzas, combos, bebidas y acompañamientos a domicilio. Personaliza tu pizza, paga en línea y recibe tu pedido.',
+    'Pide deliciosas pizzas recién horneadas, super combos familiares, bebidas y postres a domicilio en Colombia con DeliPizza. Paga fácil con Nequi o Bre-B.',
   keywords: [
-    'pizza colombia',
+    'delipizza',
+    'delipizza colombia',
     'domicilio pizza',
     'super combos pizza',
     'pizza nequi',
     'pizza bre-b',
     'mitad y mitad pizza',
-    'borde de queso y bocadillo',
+    'borde de queso',
   ],
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  icons: {
+    icon: '/brand/delipizza-emblem.png',
+    apple: '/brand/delipizza-emblem.png',
+  },
   openGraph: {
-    title: 'Pizzería Express | Pizza a domicilio',
+    title: 'DeliPizza | Domicilios de Pizza Online en Colombia',
     description:
-      'Pide pizzas, combos, bebidas y acompañamientos a domicilio. Personaliza tu pizza, paga en línea y recibe tu pedido.',
+      'Pide deliciosas pizzas recién horneadas, super combos familiares, bebidas y postres a domicilio en Colombia con DeliPizza. Paga fácil con Nequi o Bre-B.',
     type: 'website',
     locale: 'es_CO',
-    siteName: siteConfig.brand.name,
+    siteName: 'DeliPizza',
     images: [
       {
-        url: '/images/brand/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Pizzería Express Colombia',
+        url: '/brand/delipizza-logo.png',
+        width: 800,
+        height: 400,
+        alt: 'DeliPizza Colombia',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pizzería Express | Pizza a domicilio',
+    title: 'DeliPizza | Domicilios de Pizza Online en Colombia',
     description:
-      'Pide pizzas, combos, bebidas y acompañamientos a domicilio. Personaliza tu pizza, paga en línea y recibe tu pedido.',
+      'Pide deliciosas pizzas recién horneadas, super combos familiares, bebidas y postres a domicilio en Colombia con DeliPizza.',
+    images: ['/brand/delipizza-logo.png'],
   },
   robots: {
     index: true,

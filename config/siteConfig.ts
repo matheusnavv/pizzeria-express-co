@@ -22,6 +22,8 @@ export interface SiteConfig {
     description: string;
     logoText: string;
     logoIcon: string;
+    logoUrl?: string;
+    emblemUrl?: string;
     contact: {
       phone: string;
       email: string;
@@ -65,21 +67,23 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   brand: {
-    name: "Pizzería Express",
-    shortName: "Express",
+    name: "DeliPizza",
+    shortName: "DeliPizza",
     tagline: "Pizza recién horneada, directo a tu puerta.",
-    description: "Pide pizzas, combos, bebidas y acompañamientos a domicilio en Colombia. Personaliza tu pizza con bordes rellenos, mitad y mitad e ingredientes adicionales. Paga fácil con Nequi o Bre-B.",
-    logoText: "Pizzería Express",
+    description: "Pide pizzas, super combos, bebidas y postres a domicilio en Colombia con DeliPizza. Personaliza con mitad y mitad, bordes de queso y paga al instante con Nequi o Bre-B.",
+    logoText: "DeliPizza",
     logoIcon: "🍕",
+    logoUrl: "/brand/delipizza-logo.png",
+    emblemUrl: "/brand/delipizza-emblem.png",
     contact: {
       phone: "+573000000000",
-      email: "contacto@pizzeriaexpress.co",
+      email: "contacto@delipizza.co",
       displayPhone: "300 000 0000",
     },
     colors: {
-      primary: "#E53935", // Vibrant pizza red
-      secondary: "#FFB300", // Warm melted cheese gold
-      accent: "#43A047", // Fresh basil green
+      primary: "#E53935", // DeliPizza Red
+      secondary: "#FFB300", // Warm cheese gold
+      accent: "#F97316", // Vibrant orange
     },
   },
   commerce: {
@@ -93,7 +97,7 @@ export const siteConfig: SiteConfig = {
     maxCartItems: 30,
     maxItemQuantity: 10,
     maxExtrasPerPizza: 5,
-    maxNotesLength: 500,
+    maxNotesLength: 140,
   },
   schedule: {
     timezone: "America/Bogota",

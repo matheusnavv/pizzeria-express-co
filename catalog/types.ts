@@ -18,6 +18,7 @@ export interface Flavor {
   name: string;
   description: string;
   ingredients: string[];
+  category: 'tradicionales' | 'especiales' | 'dulces';
   isPopular?: boolean;
   isVegetarian?: boolean;
   badge?: string;
@@ -106,6 +107,7 @@ export interface Product {
   headline?: string;
   description: string;
   basePriceCOP: number;
+  compareAtPriceCOP?: number; // Explicit reference price for crossed-out display. Never generated artificially.
   badge?: string;
   image: string;
   isCombo: boolean;

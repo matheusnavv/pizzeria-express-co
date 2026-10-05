@@ -33,3 +33,7 @@ next-env.d.ts
 dev.db
 dev.db-journal
 *.sqlite
+
+# References & Local archives
+ref 2/
+*.zip
