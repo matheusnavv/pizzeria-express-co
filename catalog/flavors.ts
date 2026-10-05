@@ -1,0 +1,85 @@
+import { Flavor } from './types';
+
+export const PIZZA_FLAVORS: Flavor[] = [
+  {
+    id: 'hawaiana',
+    name: 'Hawaiana',
+    description: 'La favorita clásica con jamón seleccionado, piña caramelizada y queso mozzarella fundido.',
+    ingredients: ['Jamón', 'Piña', 'Queso mozzarella', 'Salsa de tomate clásica'],
+    isPopular: true,
+    badge: 'MÁS PEDIDA',
+    image: '/images/products/pizza-hawaiana.webp',
+  },
+  {
+    id: 'pollo-champinones',
+    name: 'Pollo con Champiñones',
+    description: 'Pechuga de pollo desmechada marinada con champiñones frescos y queso mozzarella.',
+    ingredients: ['Pollo desmechado', 'Champiñones frescos', 'Queso mozzarella'],
+    isPopular: true,
+    image: '/images/products/pizza-pollo-champinones.webp',
+  },
+  {
+    id: 'pepperoni',
+    name: 'Pepperoni',
+    description: 'Generosa capa de pepperoni americano crujiente sobre salsa de tomate de la casa y mozzarella.',
+    ingredients: ['Pepperoni', 'Salsa de tomate', 'Queso mozzarella'],
+    isPopular: true,
+    badge: 'FAVORITA',
+    image: '/images/products/pizza-pepperoni.webp',
+  },
+  {
+    id: 'jamon-queso',
+    name: 'Jamón y Queso',
+    description: 'La combinación tradicional y reconfortante de jamón tierno y abundante queso mozzarella.',
+    ingredients: ['Jamón seleccionado', 'Queso mozzarella abundante'],
+    image: '/images/products/pizza-jamon-queso.webp',
+  },
+  {
+    id: 'carnes',
+    name: 'Carnes',
+    description: 'Especial para carnívoros: selección de tocineta crocante, jamón y carne sazonada.',
+    ingredients: ['Selección de carnes', 'Tocineta', 'Salsa de tomate artesanal', 'Queso mozzarella'],
+    isPopular: true,
+    image: '/images/products/pizza-carnes.webp',
+  },
+  {
+    id: 'criolla',
+    name: 'Criolla',
+    description: 'Sabor colombiano auténtico con jugosa carne desmechada, maíz tierno dulce y mozzarella.',
+    ingredients: ['Carne desmechada', 'Maíz tierno dulce', 'Queso mozzarella'],
+    badge: 'TÍPICA COLOMBIANA',
+    image: '/images/products/pizza-criolla.webp',
+  },
+  {
+    id: 'paisa',
+    name: 'Paisa',
+    description: 'Inspiración tradicional con chorizo antioqueño, jamón, maíz dulce y queso mozzarella.',
+    ingredients: ['Chorizo antioqueño', 'Jamón', 'Maíz tierno', 'Queso mozzarella'],
+    badge: 'ESPECIALIDAD',
+    image: '/images/products/pizza-paisa.webp',
+  },
+  {
+    id: 'pollo-tocineta',
+    name: 'Pollo Tocineta',
+    description: 'Tiernos trozos de pollo, tocineta ahumada crujiente, maíz tierno y queso mozzarella.',
+    ingredients: ['Pollo', 'Tocineta ahumada', 'Maíz dulce', 'Queso mozzarella'],
+    image: '/images/products/pizza-pollo-tocineta.webp',
+  },
+  {
+    id: 'miel-mostaza',
+    name: 'Miel Mostaza',
+    description: 'Pollo marinado, tocineta crocante y nuestra exclusiva salsa agridulce de miel mostaza.',
+    ingredients: ['Pollo', 'Tocineta', 'Queso mozzarella', 'Salsa miel mostaza especial'],
+    image: '/images/products/pizza-miel-mostaza.webp',
+  },
+  {
+    id: 'vegetariana',
+    name: 'Vegetariana',
+    description: 'Champiñones frescos, pimentón dulce, cebolla roja, rodajas de tomate y queso mozzarella.',
+    ingredients: ['Champiñones', 'Pimentón dulce', 'Cebolla roja', 'Tomate fresco', 'Queso mozzarella'],
+    isVegetarian: true,
+    image: '/images/products/pizza-vegetariana.webp',
+  },
+];
+
+export const FLAVORS_MAP = new Map(PIZZA_FLAVORS.map((f) => [f.id, f]));

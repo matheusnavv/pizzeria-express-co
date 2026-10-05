@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id                String               @id @default(uuid())
+  publicCode        String               @unique // e.g. PED-48291
+  customerName      String
+  phone             String               // Colombian mobile normalized (e.g. 3001234567)
+  department        String
+  city              String
+  barrio            String
+  address           String
+  complement        String?
+  deliveryReference String?
+  customerNotes     String?
+  subtotal          Int                  // Integer in COP
+  deliveryFee       Int                  // Integer in COP (0 in v1)
+  total             Int                  // Integer in COP
+  currency          String               @default("COP")
+  paymentStatus     String               @default("pending") // pending, paid, failed, expired, cancelled, refunded
+  orderStatus       String               @default("awaiting_payment") // awaiting_payment, paid, confirmed, preparing, out_for_delivery, delivered, cancelled
+  paidAt            DateTime?
+  createdAt         DateTime             @default(now())
+  updatedAt         DateTime             @updatedAt
+
+  items             OrderItem[]
+  transactions      PaymentTransaction[]
+
+  @@index([publicCode])
+  @@index([phone])
+  @@index([paymentStatus])
+  @@map("orders")
+}
+
+model OrderItem {
+  id             String   @id @default(uuid())
+  orderId        String
+  productId      String
+  productName    String
+  quantity       Int
+  unitPrice      Int      // Integer in COP
+  totalPrice     Int      // Integer in COP
+  customizations Json?    // Structured pizzas, drinks, and notes
+  createdAt      DateTime @default(now())
+
+  order          Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@map("order_items")
+}
+
+model PaymentTransaction {
+  id                    String         @id @default(uuid())
+  orderId               String
+  provider              String         @default("xpag") // xpag
+  externalId            String         @unique // Unique per attempt, e.g. PED-48291-1
+  providerTransactionId String?        // transaction_id from XPAG (e.g. cop_...)
+  requestNumber         String?        // request_number from XPAG
+  amount                Int            // Integer in COP
+  currency              String         @default("COP")
+  method                String         // NEQUI or BREB
+  status                String         @default("pending") // pending, confirmed, completed, failed, expired
+  checkoutUrl           String?
+  payeeData             Json?
+  expiresAt             DateTime?
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+
+  order                 Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  events                PaymentEvent[]
+
+  @@index([orderId])
+  @@index([externalId])
+  @@index([providerTransactionId])
+  @@map("payment_transactions")
+}
+
+model PaymentEvent {
+  id               String              @id @default(uuid())
+  transactionId    String?
+  providerEventId  String?
+  eventType        String              // cashin, cashout, webhook, simulate
+  status           String              // confirmed, failed, expired, pending
+  sanitizedPayload Json
+  processedAt      DateTime            @default(now())
+
+  transaction      PaymentTransaction? @relation(fields: [transactionId], references: [id], onDelete: SetNull)
+
+  @@index([transactionId])
+  @@index([providerEventId])
+  @@map("payment_events")
+}
